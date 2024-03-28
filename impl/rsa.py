@@ -1,7 +1,7 @@
 import random
 import math
 
-from . import primality_testing as primes
+import primality_testing as primes
 
 
 # Use of prime numbers in data encryption

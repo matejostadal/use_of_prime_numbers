@@ -427,64 +427,64 @@ import rsa
 # the protocol may fail sometimes because probabilistic primes
 # generation is used in the key generation
 
-# min_size_of_primes = 100
-# max_size_of_primes = 1000
+min_size_of_primes = 100
+max_size_of_primes = 1000
 
 # Mind that for these values the key generation may take some time
 # min_size_of_primes = 10**12
 # max_size_of_primes = 10**13
 
 
-# # ALICE
-# public_key_ALICE, secret_key_ALICE = rsa.generate_key_pair(
-#     min_size_of_primes, max_size_of_primes
-# )
+# ALICE
+public_key_ALICE, secret_key_ALICE = rsa.generate_key_pair(
+    min_size_of_primes, max_size_of_primes
+)
 
-# # BOB
-# public_key_BOB, secret_key_BOB = rsa.generate_key_pair(
-#     min_size_of_primes, max_size_of_primes
-# )
+# BOB
+public_key_BOB, secret_key_BOB = rsa.generate_key_pair(
+    min_size_of_primes, max_size_of_primes
+)
 
-# print("\nKEYS GENERATION")
-# print("===============")
-# print(f"ALICE: public key = {public_key_ALICE}, secret_key = {secret_key_ALICE}")
-# print(f"BOB: public key = {public_key_BOB}, secret_key = {secret_key_BOB}\n\n")
+print("\nKEYS GENERATION")
+print("===============")
+print(f"ALICE: public key = {public_key_ALICE}, secret_key = {secret_key_ALICE}")
+print(f"BOB: public key = {public_key_BOB}, secret_key = {secret_key_BOB}\n\n")
 
-# print("SENDING OF m_1 (from Alice to Bob)")
-# print("==================================\n")
+print("SENDING OF m_1 (from Alice to Bob)")
+print("==================================\n")
 
 # # Alice sends m_1 to Bob
-# m_1 = 123
-# m_1_encrypted = rsa.encrypt(m_1, public_key_BOB, public_key_ALICE, secret_key_ALICE)
+m_1 = 123
+m_1_encrypted = rsa.encrypt(m_1, public_key_BOB, public_key_ALICE, secret_key_ALICE)
 
-# print(f"Alice writes m_1 = {m_1}. Encrypts it into (c_1, s_1) = {m_1_encrypted}.\n")
+print(f"Alice writes m_1 = {m_1}. Encrypts it into (c_1, s_1) = {m_1_encrypted}.\n")
 
-# # Bob receives m_1
-# m_1_decrypted = rsa.decrypt(
-#     m_1_encrypted, public_key_ALICE, public_key_BOB, secret_key_BOB
-# )
+# Bob receives m_1
+m_1_decrypted = rsa.decrypt(
+    m_1_encrypted, public_key_ALICE, public_key_BOB, secret_key_BOB
+)
 
-# print(
-#     f"Bob receives: (c_1, s_1) = {m_1_encrypted}. Decrypts it into m_1 = {m_1_decrypted}.\n\n"
-# )
+print(
+    f"Bob receives: (c_1, s_1) = {m_1_encrypted}. Decrypts it into m_1 = {m_1_decrypted}.\n\n"
+)
 
-# print("SENDING OF m_2 (from Bob to Alice)")
-# print("==================================\n")
+print("SENDING OF m_2 (from Bob to Alice)")
+print("==================================\n")
 
-# # Bob sends m_2 to Alice
-# m_2 = 987
-# m_2_encrypted = rsa.encrypt(m_2, public_key_ALICE, public_key_BOB, secret_key_BOB)
+# Bob sends m_2 to Alice
+m_2 = 987
+m_2_encrypted = rsa.encrypt(m_2, public_key_ALICE, public_key_BOB, secret_key_BOB)
 
-# print(f"Bob writes m_2 = {m_2}. Encrypts it into (c_2, s_2) = {m_2_encrypted}.\n")
+print(f"Bob writes m_2 = {m_2}. Encrypts it into (c_2, s_2) = {m_2_encrypted}.\n")
 
-# # Alice receives m_2
-# m_2_decrypted = rsa.decrypt(
-#     m_2_encrypted, public_key_BOB, public_key_ALICE, secret_key_ALICE
-# )
+# Alice receives m_2
+m_2_decrypted = rsa.decrypt(
+    m_2_encrypted, public_key_BOB, public_key_ALICE, secret_key_ALICE
+)
 
-# print(
-#     f"Alice receives: (c_2, s_2) = {m_2_encrypted}. Decrypts it into m_2 = {m_2_decrypted}.\n"
-# )
+print(
+    f"Alice receives: (c_2, s_2) = {m_2_encrypted}. Decrypts it into m_2 = {m_2_decrypted}.\n"
+)
 
 
 # EVE AND MALLORY

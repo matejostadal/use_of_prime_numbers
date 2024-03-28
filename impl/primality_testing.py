@@ -1,7 +1,7 @@
 import math
 import random
 
-from . import factorization
+import factorization
 
 
 # Use of prime numbers in data encryption

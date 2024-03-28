@@ -1,6 +1,6 @@
 from functools import reduce
 
-from . import factorization
+import factorization
 
 
 # Use of prime numbers in data encryption
